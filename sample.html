@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>My Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
+<body>
+<div id="section01">
+
+</div>
+<script type="text/javascript">
+$(function() {
+//	$('#section01').load('http://www2.toysrus.co.jp/store/event/');
+	$.ajax({
+          type: 'GET',
+          url: 'http://www2.toysrus.co.jp/store/event/',
+          dataType: 'html',
+          success: function(data) {
+          $('#section01').html($(data).find('#isHasWhatsNew'));
+        }
+     });
+});
+
+</script>
+
+</body>
+</html>
